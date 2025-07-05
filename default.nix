@@ -160,6 +160,11 @@ in stdenv.mkDerivation rec {
         --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath runtimeDependencies}
     ''
 
+    + ''
+      mkdir -p $out/opt/shadow-${channel}/usr/share/icons/hicolor/256x256/apps
+      touch $out/opt/shadow-${channel}/usr/share/icons/hicolor/256x256/apps/shadow-launcher.png
+    ''
+
     # Wrap launcher
     + ''
       makeWrapper $out/opt/shadow-${channel}/shadow-launcher $out/bin/shadow-${channel} \
