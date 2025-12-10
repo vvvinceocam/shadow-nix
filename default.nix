@@ -1,7 +1,7 @@
 { stdenv, lib, pkgs, fetchurl
 
 # Native build inputs
-, autoPatchelfHook, wrapGAppsHook, makeWrapper
+, autoPatchelfHook, wrapGAppsHook3, makeWrapper
 
 # Build inputs
 , zlib, xorg, alsa-lib, libbsd, libopus, openssl, libva, pango, cairo, libuuid, nspr
@@ -43,7 +43,7 @@ in stdenv.mkDerivation rec {
   # Add all hooks
   nativeBuildInputs = [
     autoPatchelfHook
-    wrapGAppsHook
+    wrapGAppsHook3
     makeWrapper
   ];
 
